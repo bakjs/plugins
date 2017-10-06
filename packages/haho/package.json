@@ -1,0 +1,23 @@
+{
+  "name": "@bakjs/haho",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    {
+      "name": "Iman Tabrizian",
+      "email": "tabrizian@outlook.com"
+    }
+  ],
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "dependencies": {
+    "haho": "^0.0.2",
+    "config": ""
+  }
+}
