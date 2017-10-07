@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.2"></a>
+## 0.3.2 (2017-10-07)
+
+
+
+
+**Note:** Version bump only for package @bakjs/logging
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/bakjs/bak/compare/@bakjs/logging@0.3.0...@bakjs/logging@0.3.1) (2017-09-06)
 
