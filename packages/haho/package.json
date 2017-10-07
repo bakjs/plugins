@@ -17,7 +17,6 @@
     "index.js"
   ],
   "dependencies": {
-    "haho": "^0.0.2",
-    "config": ""
+    "haho": "^0.0.2"
   }
 }
