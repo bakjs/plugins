@@ -4,13 +4,6 @@ const Mongoose = require('mongoose')
 Mongoose.Promise = global.Promise
 
 exports.register = function (server, config = {}) {
-  // Register mongoose-fill
-  // @see https://github.com/whitecolor/mongoose-fill
-  if (config.fill !== false) {
-    // She will register itself!!
-    require('mongoose-fill')
-  }
-
   // Use custom function to log collection methods + arguments
   Mongoose.set('debug', config.debug)
 
