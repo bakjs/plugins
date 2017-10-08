@@ -2,7 +2,7 @@
   "name": "@bakjs/haho",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },
@@ -13,10 +13,12 @@
     }
   ],
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "dependencies": {
     "haho": "^0.0.2"
+  },
+  "peerDependencies": {
+    "bak": "^2.0.0"
   }
 }

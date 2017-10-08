@@ -4,19 +4,19 @@ const { Utils } = require('bak')
 
 const { realIP } = Utils
 
-function HapiRateLimit (plugin, _options, next) {
+exports.register = function HapiRateLimit (plugin, _options) {
   // Apply default options
   const options = Hoek.applyToDefaults(defaults, _options)
 
   // Create limiter instance
-  // const limiter = new RedisRateLimit(options);
+  // const limiter = new RedisRateLimit(options)
   let Driver = options.driver
   if (typeof Driver === 'string') {
-    Driver = require('./' + Driver)
+    Driver = require('./providers/' + Driver)
   }
   const limiter = new Driver(options)
 
-  const handleLimits = (request, reply) => {
+  const handleLimits = async (request, h) => {
     const route = request.route
 
     // Get route-specific limits
@@ -29,48 +29,51 @@ function HapiRateLimit (plugin, _options, next) {
 
     // If no limits on route
     if (!routeLimit) {
-      return reply.continue()
+      return h.continue
     }
 
     // Check limits on route
-    Promise.resolve(limiter.check(
+    const rateLimit = await limiter.check(
       options.namespace + ':' + realIP(request) + ':' + (request.route.id || request.route.path),
       routeLimit.limit,
       routeLimit.duration
-    )).then(rateLimit => {
-      request.plugins.ratelimit = {
-        limit: rateLimit.limit,
-        remaining: rateLimit.remaining - 1,
-        reset: rateLimit.reset
-      }
+    )
 
-      if (rateLimit.remaining > 0) {
-        return reply.continue()
-      }
+    request.plugins.ratelimit = {
+      limit: rateLimit.limit,
+      remaining: rateLimit.remaining - 1,
+      reset: rateLimit.reset
+    }
 
-      const error = Boom.tooManyRequests('RATE_LIMIT_EXCEEDED')
-      setHeaders(error.output.headers, request.plugins.ratelimit, options.XHeaders)
-      error.reformat()
+    if (rateLimit.remaining > 0) {
+      return h.continue
+    }
 
-      return reply(error)
-    }).catch(reply)
+    const error = Boom.tooManyRequests('RATE_LIMIT_EXCEEDED')
+    setHeaders(error.output.headers, request.plugins.ratelimit, options.XHeaders)
+    error.reformat()
+    return error
   }
 
-  const responseLimits = (request, reply) => {
+  const responseLimits = (request, h) => {
     if (request.plugins.ratelimit) {
       const response = request.response
       if (!response.isBoom) {
         setHeaders(response.headers, request.plugins.ratelimit, options.XHeaders)
       }
     }
-    reply.continue()
+    return h.continue
   }
 
   // Ext
   plugin.ext('onPreAuth', handleLimits)
   plugin.ext('onPostHandler', responseLimits)
+}
 
-  next()
+exports.register.attributes = {
+  pkg: {
+    name: 'bak-ratelimit'
+  }
 }
 
 // Set rate-limit headers
@@ -95,13 +98,3 @@ const defaults = {
     duration: 60000
   }
 }
-
-// Meta
-HapiRateLimit.attributes = {
-  pkg: {
-    name: 'bak-ratelimit'
-  }
-}
-
-// Export plugin
-exports.register = HapiRateLimit

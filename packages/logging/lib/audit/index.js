@@ -1,5 +1,5 @@
 const AuditPlugin = {
-  register (server, config, next) {
+  register (server, config) {
     // Audit Helper
     server.decorate('request', 'audit', function audit (args, additional_tags = []) {
       // Normalize target
@@ -22,8 +22,6 @@ const AuditPlugin = {
       // Emit log event
       this.log(['audit'].concat(additional_tags), Object.assign({user, ip: this.ip}, args))
     })
-
-    next()
   }
 }
 

@@ -13,11 +13,11 @@
     }
   ],
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "peerDependencies": {
-    "@bakjs/mongo": "*"
+    "@bakjs/mongo": "*",
+    "bak": "^2.0.0"
   },
   "dependencies": {
     "chalk": "^2.1.0",

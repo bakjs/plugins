@@ -1,7 +1,7 @@
 const AuthController = require('./controller')
 const AuthTokenPlugin = require('./token')
 
-exports.register = (server, authOptions, next) => {
+exports.register = (server, authOptions) => {
   // 1- Auth Provider
   // Create Auth provider instance
   const Provider = authOptions.provider || require('./provider/default')
@@ -23,9 +23,6 @@ exports.register = (server, authOptions, next) => {
   // 4- HAPI Stuff
   // Expose provider to plugin
   server.expose('auth', authProvider)
-
-  // Next
-  next()
 }
 
 exports.register.attributes = {

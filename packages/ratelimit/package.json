@@ -2,7 +2,7 @@
   "name": "@bakjs/ratelimit",
   "version": "0.1.5",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },
@@ -13,10 +13,9 @@
     }
   ],
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "peerDependencies": {
-    "bak": "*"
+    "bak": "^2.0.0"
   }
 }

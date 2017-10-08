@@ -7,7 +7,7 @@ Mongoose.Promise = global.Promise
 
 module.exports = {
   Model,
-  default: plugin,
+  register: plugin.register,
   Schema: Mongoose.Schema,
   Mongoose
 }

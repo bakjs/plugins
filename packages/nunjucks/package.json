@@ -2,7 +2,7 @@
   "name": "@bakjs/nunjucks",
   "version": "0.1.4",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },
@@ -13,13 +13,15 @@
     }
   ],
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "dependencies": {
     "inert": "^4.2.1",
     "nunjucks": "^3.0.1",
     "path": "^0.12.7",
     "vision": "^4.1.1"
+  },
+  "peerDependencies": {
+    "bak": "^2.0.0"
   }
 }

@@ -18,7 +18,7 @@ const schema = Joi.object().keys({
   tokenType: Joi.string().required()
 }).unknown(true)
 
-const plugin = (server, {authOptions, authProvider}) => {
+const plugin = (server, { authOptions, authProvider }) => {
   Hoek.assert(authOptions, 'Missing authOptions')
   Hoek.assert(authProvider, 'Missing authProvider')
 
@@ -26,29 +26,29 @@ const plugin = (server, {authOptions, authProvider}) => {
 
   Joi.assert(settings, schema)
 
-  const authenticate = (request, reply) => {
+  const authenticate = (request, h) => {
     try {
       // Use headers by default
       let authorization = request.raw.req.headers.authorization
 
       // Fallback 1 : Check for cookies
       if (settings.allowCookieToken &&
-                !authorization &&
-                request.state[settings.accessTokenName]) {
+        !authorization &&
+        request.state[settings.accessTokenName]) {
         authorization = settings.tokenType + ' ' + request.state[settings.accessTokenName]
       }
 
       // Fallback 2 : URL Query
       if (settings.allowQueryToken &&
-                !authorization &&
-                request.query[settings.accessTokenName]) {
+        !authorization &&
+        request.query[settings.accessTokenName]) {
         authorization = settings.tokenType + ' ' + request.query[settings.accessTokenName]
         delete request.query[settings.accessTokenName]
       }
 
       // Fallback 3 : Throw Error
       if (!authorization) {
-        return reply(Boom.unauthorized(null, settings.tokenType))
+        return Boom.unauthorized(null, settings.tokenType)
       }
 
       // Try to parse headers
@@ -56,23 +56,23 @@ const plugin = (server, {authOptions, authProvider}) => {
 
       // Ensure correct token type
       if (parts[0].toLowerCase() !== settings.tokenType.toLowerCase()) {
-        return reply(Boom.unauthorized(null, settings.tokenType))
+        return Boom.unauthorized(null, settings.tokenType)
       }
 
       // Validate token
       const token = parts[1]
 
-      authProvider.authToken(token).then(({credentials, artifacts}) => {
-        reply.continue({credentials, artifacts})
+      authProvider.authToken(token).then(({ credentials, artifacts }) => {
+        return h.continue({ credentials, artifacts }) // TODO: FIXME
       }).catch(err => {
-        reply(Boom.unauthorized(err.error))
+        return Boom.unauthorized(err.error)
       })
     } catch (e) {
-      reply(Boom.internal('AUTH_ERROR'))
+      return Boom.internal('AUTH_ERROR')
     }
   }
 
-  return {authenticate}
+  return { authenticate }
 }
 
 module.exports = plugin

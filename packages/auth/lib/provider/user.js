@@ -3,7 +3,7 @@ const { Model, Schema } = require('@bakjs/mongo')
 class User extends Model {
   static get $options () {
     return { strict: false }
-  };
+  }
 
   static get $visible () {
     return ['_id', 'name', 'username', 'email', 'avatar', 'scope']

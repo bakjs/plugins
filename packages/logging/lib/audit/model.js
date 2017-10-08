@@ -6,7 +6,7 @@ class Audit extends Model {
       strict: false,
       timestamps: false // We don't need updated_at
     }
-  };
+  }
 
   static get $schema () {
     return {

@@ -13,12 +13,11 @@
     }
   ],
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "peerDependencies": {
     "@bakjs/mongo": "*",
-    "bak": "*"
+    "bak": "^2.0.0"
   },
   "dependencies": {
     "axios": "^0.16.2",

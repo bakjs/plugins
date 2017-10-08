@@ -3,7 +3,7 @@ const AuditPlugin = require('./audit')
 
 const LoggingPlugin = {
 
-  register: function (server, options, next) {
+  register (server, options) {
     let plugins = []
 
     plugins.push({
@@ -28,10 +28,7 @@ const LoggingPlugin = {
       })
     }
 
-    server.register(plugins, (err) => {
-      if (err) console.error(err)
-      if (next) next()
-    })
+    return server.register(plugins)
   }
 }
 

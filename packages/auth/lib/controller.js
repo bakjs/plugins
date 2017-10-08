@@ -30,30 +30,30 @@ class $AuthController extends Controller {
     this.authProvider = authProvider
   }
 
-  async auth_login_post (request, reply) {
+  async auth_login_post (request, h) {
     let { username, password } = request.payload || {}
     let { token } = await this.authProvider.login({ username, password, request })
-    reply({ token })
+    return { token }
   }
 
-  async auth_logout (request, reply) {
+  async auth_logout (request, h) {
     let { session, user } = request
     await this.authProvider.logout({ user, session })
-    reply('LOGGED_OUT')
+    return 'LOGGED_OUT'
   }
 
-  auth_user (request, reply) {
-    reply({ user: request.user })
+  auth_user (request, h) {
+    return { user: request.user }
   }
 
-  async oauth_$clientID_login_any (request, reply, { clientID }) {
-    let redirect_uri = await this.authProvider.oauthLogin(clientID)
-    reply({ redirect_uri })
+  async oauth_$clientID_login_any (request, h) {
+    let redirect_uri = await this.authProvider.oauthLogin(request.params.clientID)
+    return { redirect_uri }
   }
 
-  async oauth_$clientID_authorize_any (request, reply, { clientID }) {
-    let { token, user } = await this.authProvider.oauthAuthorize(clientID, request)
-    reply({ token, user })
+  async oauth_$clientID_authorize_any (request, h) {
+    let { token, user } = await this.authProvider.oauthAuthorize(request.params.clientID, request)
+    return { token, user }
   }
 }
 

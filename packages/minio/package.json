@@ -13,11 +13,13 @@
     }
   ],
   "files": [
-    "lib",
-    "index.js"
+    "lib"
   ],
   "dependencies": {
     "config": "^1.26.2",
     "minio": "^3.2.0"
+  },
+  "peerDependencies": {
+    "bak": "^2.0.0"
   }
 }

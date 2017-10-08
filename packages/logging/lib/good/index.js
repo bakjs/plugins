@@ -5,7 +5,7 @@ const GoodSentry = require('./good-sentry')
 const GoodAudit = require('../audit/good-audit')
 
 const GoodPlugin = {
-  register (server, config, next) {
+  register (server, config) {
     const reporters = {}
 
     // Default squeeze filter
@@ -63,12 +63,9 @@ const GoodPlugin = {
       'stdout'
     ]
 
-    server.register({
+    return server.register({
       register: Good,
       options: Object.assign({}, config.options, { reporters })
-    }, (err) => {
-      if (err) console.error(err)
-      if (next) next()
     })
   }
 }

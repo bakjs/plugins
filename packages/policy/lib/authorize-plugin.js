@@ -1,6 +1,6 @@
 const Boom = require('boom')
 
-exports.register = function (server, options, next) {
+exports.register = function authorizePlugin (server, options) {
   if (!options) options = {}
   const policies = options.policies || []
 
@@ -47,8 +47,6 @@ exports.register = function (server, options, next) {
   }
 
   server.decorate('request', 'authorize', authorize)
-
-  next()
 }
 
 exports.register.attributes = {

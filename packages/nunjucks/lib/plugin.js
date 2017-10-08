@@ -1,9 +1,9 @@
 const Vision = require('vision')
 const path = require('path')
 const Inert = require('inert')
-const NunjuksEngine = require('./nunjucks')
+const NunjuksEngine = require('./nunjucks-engine')
 
-exports.register = (server, options, next) => {
+exports.register = (server, options) => {
   const baseDir = options.baseDir || 'resources'
 
   server.register(Vision, () => {
@@ -37,8 +37,6 @@ exports.register = (server, options, next) => {
       })
     })
   }
-
-  if (next) next()
 }
 
 exports.register.attributes = {
