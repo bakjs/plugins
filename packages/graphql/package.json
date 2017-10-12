@@ -1,0 +1,22 @@
+{
+  "name": "@bakjs/graphql",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "lib/plugin.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    {
+      "name": "Pooya Parsa",
+      "email": "pooya@pi0.ir"
+    }
+  ],
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "graphql-server-hapi": "^1.1.6",
+    "graphql-tools": "^2.4.0"
+  }
+}
