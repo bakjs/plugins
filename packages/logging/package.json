@@ -2,7 +2,7 @@
   "name": "@bakjs/logging",
   "version": "0.3.2",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },

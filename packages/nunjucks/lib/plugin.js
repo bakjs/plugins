@@ -39,6 +39,4 @@ exports.register = (server, options) => {
   }
 }
 
-exports.register.attributes = {
-  name: 'bak-nunjucks'
-}
+exports.pkg = require('../package.json')

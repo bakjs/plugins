@@ -1,39 +1,35 @@
-const GoodPlugin = require('./good')
-const AuditPlugin = require('./audit')
+const GoodPlugin = require('./good/plugin')
+const AuditPlugin = require('./audit/plugin')
+const Audit = require('./audit/model')
 
-const LoggingPlugin = {
+exports.register = function (server, options) {
+  let plugins = []
 
-  register (server, options) {
-    let plugins = []
+  plugins.push({
+    register: GoodPlugin,
+    options
+  })
 
+  if (options.audit) {
     plugins.push({
-      register: GoodPlugin,
+      register: AuditPlugin,
       options
     })
-
-    if (options.audit) {
-      plugins.push({
-        register: AuditPlugin,
-        options
-      })
-    }
-
-    // Non production logging
-    if (process.env.NODE_ENV !== 'production') {
-      // Print full error traces to console
-      server.on('log', (event, tags) => {
-        if (tags.error) {
-          console.error(event)
-        }
-      })
-    }
-
-    return server.register(plugins)
   }
+
+  // Non production logging
+  if (process.env.NODE_ENV !== 'production') {
+    // Print full error traces to console
+    server.on('log', (event, tags) => {
+      if (tags.error) {
+        console.error(event)
+      }
+    })
+  }
+
+  return server.register(plugins)
 }
 
-LoggingPlugin.register.attributes = {
-  name: 'bak-logging'
-}
+exports.pkg = require('../package.json')
 
-module.exports = LoggingPlugin
+exports.Audit = Audit

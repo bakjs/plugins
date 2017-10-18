@@ -2,7 +2,7 @@
   "name": "@bakjs/mongo",
   "version": "0.2.1",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },

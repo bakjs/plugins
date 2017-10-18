@@ -1,5 +1,6 @@
 const AuthController = require('./controller')
 const AuthTokenPlugin = require('./token')
+const User = require('./provider/user')
 
 exports.register = (server, authOptions) => {
   // 1- Auth Provider
@@ -25,6 +26,6 @@ exports.register = (server, authOptions) => {
   server.expose('auth', authProvider)
 }
 
-exports.register.attributes = {
-  name: 'bak-auth'
-}
+exports.pkg = require('../package.json')
+
+exports.User = User

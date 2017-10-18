@@ -2,7 +2,7 @@
   "name": "@bakjs/auth",
   "version": "0.1.8",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },

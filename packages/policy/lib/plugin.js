@@ -9,9 +9,7 @@ exports.register = function (server, options) {
   server.register({ register: AuthorizePlugin, options })
 }
 
-exports.register.attributes = {
-  name: 'bak-policy'
-}
+exports.pkg = require('../package.json')
 
 exports.GuardPlugin = GuardPlugin
 exports.AuthorizePlugin = AuthorizePlugin

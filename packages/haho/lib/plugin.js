@@ -1,7 +1,5 @@
 const Haho = require('haho')
 
-module.exports.register = Haho.register
+exports.register = Haho.register
 
-module.exports.register.attributes = {
-  name: 'bak-haho'
-}
+exports.pkg = require('../package.json')

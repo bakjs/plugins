@@ -1,7 +1,12 @@
 const Mongoose = require('mongoose')
+const Model = require('./model')
 
 // Use native promises
 Mongoose.Promise = global.Promise
+
+// Register mongoose-fill
+// @see https://github.com/whitecolor/mongoose-fill
+require('mongoose-fill')
 
 exports.register = function (server, config = {}) {
   // Use custom function to log collection methods + arguments
@@ -32,6 +37,7 @@ exports.register = function (server, config = {}) {
   return Promise.all(queue)
 }
 
-exports.register.attributes = {
-  name: 'bak-mongo'
-}
+exports.pkg = require('../package.json')
+
+exports.Model = Model
+exports.Schema = Mongoose.Schema

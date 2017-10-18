@@ -70,11 +70,7 @@ exports.register = function HapiRateLimit (plugin, _options) {
   plugin.ext('onPostHandler', responseLimits)
 }
 
-exports.register.attributes = {
-  pkg: {
-    name: 'bak-ratelimit'
-  }
-}
+exports.pkg = require('../package.json')
 
 // Set rate-limit headers
 function setHeaders (headers, ratelimit, XHeaders = false) {

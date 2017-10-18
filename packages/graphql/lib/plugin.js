@@ -78,6 +78,4 @@ exports.register = (server, options, next) => {
   next()
 }
 
-exports.register.attributes = {
-  name: 'bak-graphql'
-}
+exports.pkg = require('../package.json')
