@@ -1,5 +1,7 @@
+const Chalk = require('chalk')
+
 function warn (type, message, at) {
-  console.warn('[warn]', `[${type}]`, message, at)
+  console.warn(' ⚠️ ', Chalk.yellow(`[${at}]`), Chalk.yellow(message), Chalk.grey(`(${type})`), 'https://git.io/vd79N')
 }
 
 function isPlugin (obj) {
@@ -26,8 +28,7 @@ function wrapPlugin (originalPlugin) {
   const name = plugin.name || (plugin.pkg && plugin.pkg.name) || plugin.register.name
 
   if (hasNext) {
-    console.log(getFnParamNames(originalRegister))
-    warn('AsyncPlugins', 'Plugins should return a promise instead of next callback', name)
+    warn('ASYNC_PLUGINS', 'plugins should return a promise instead of next callback', name)
   }
 
   plugin.register = function (server, options) {
