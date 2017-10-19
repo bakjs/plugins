@@ -1,5 +1,3 @@
-const { realIP } = require('../utils')
-
 exports.register = function bakShortcuts (server, config) {
   server.ext('onPreHandler', (request, h) => {
     request.user = request.auth.credentials ? request.auth.credentials.user : null
@@ -11,3 +9,8 @@ exports.register = function bakShortcuts (server, config) {
 }
 
 exports.pkg = require('..')
+
+function realIP (request) {
+  return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
+}
+
