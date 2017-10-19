@@ -1,0 +1,15 @@
+{
+  "name": "@bakjs/route-table",
+  "version": "2.0.0",
+  "license": "MIT",
+  "main": "lib/plugin.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "Pooya Parsa <pooya@pi0.ir>"
+  ],
+  "files": [
+    "lib"
+  ]
+}

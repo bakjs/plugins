@@ -7,7 +7,8 @@
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --ext .js packages",
-    "release": "lerna publish --conventional-commits"
+    "release": "lerna publish --conventional-commits",
+    "link-all": "for p in plugins/* ; do pushd $p ; yarn unlink ; yarn link ; popd ; done"
   },
   "workspaces": [
     "plugins/*"
