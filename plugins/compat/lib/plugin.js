@@ -106,4 +106,4 @@ exports.register = function bakCompat (server, config) {
   install(rootServer, true)
 }
 
-exports.pkg = require('..')
+exports.pkg = require('../package.json')

@@ -52,4 +52,4 @@ exports.register = function bakInput (server, config) {
   })
 }
 
-exports.pkg = require('..')
+exports.pkg = require('../package.json')

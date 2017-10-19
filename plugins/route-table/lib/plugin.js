@@ -107,4 +107,4 @@ exports.register = function bakRouteTable (server, config) {
   })
 }
 
-exports.pkg = require('..')
+exports.pkg = require('../package.json')
