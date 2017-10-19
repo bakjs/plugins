@@ -1,6 +1,5 @@
 {
   "private": true,
-  "bin": "packages/bak/bin/bak",
   "contributors": [
     "Pooya Parsa <pooya@fandogh.org>"
   ],
@@ -8,11 +7,10 @@
     "lerna": "lerna",
     "bootstrap": "lerna bootstrap",
     "lint": "eslint --ext .js packages",
-    "release": "lerna publish --conventional-commits",
-    "force-release": "for p in packages/*; do cd $p ; npm publish ; cd ../.. ; done"
+    "release": "lerna publish --conventional-commits"
   },
   "workspaces": [
-    "packages/*"
+    "plugins/*"
   ],
   "publishConfig": {
     "access": "public"

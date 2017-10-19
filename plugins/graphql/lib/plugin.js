@@ -4,7 +4,6 @@ const { graphqlHapi, graphiqlHapi } = require('graphql-server-hapi')
 const { makeExecutableSchema } = require('graphql-tools')
 const chalk = require('chalk')
 const _ = require('lodash')
-const { Utils } = require('bak')
 
 const TAG = '[GraphQL]'
 
@@ -53,7 +52,7 @@ exports.register = (server, options, next) => {
           context: {
             user: request.auth.credentials ? request.auth.credentials.user : null,
             session: request.auth.artifacts,
-            ip: Utils.realIP(request)
+            ip: realIP(request)
           }
         }
       }
@@ -79,3 +78,7 @@ exports.register = (server, options, next) => {
 }
 
 exports.pkg = require('../package.json')
+
+function realIP (request) {
+  return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
+}

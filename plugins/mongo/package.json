@@ -1,16 +1,13 @@
 {
   "name": "@bakjs/mongo",
-  "version": "0.2.1",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },
   "contributors": [
-    {
-      "name": "Pooya Parsa",
-      "email": "pooya@pi0.ir"
-    }
+    "Pooya Parsa <pooya@pi0.ir>"
   ],
   "files": [
     "lib",
@@ -21,11 +18,5 @@
     "lodash": "^4.17.4",
     "mongoose": "^4.11.9",
     "mongoose-fill": "^1.6.0"
-  },
-  "peerDependencies": {
-    "bak": "^2.0.0"
-  },
-  "peerDependencies": {
-    "bak": "^2.0.0"
   }
 }

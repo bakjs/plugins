@@ -1,29 +1,28 @@
 {
   "name": "@bakjs/auth",
-  "version": "0.1.8",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },
   "contributors": [
-    {
-      "name": "Pooya Parsa",
-      "email": "pooya@pi0.ir"
-    }
+    "Pooya Parsa <pooya@pi0.ir>"
   ],
   "files": [
     "lib"
   ],
   "peerDependencies": {
     "@bakjs/mongo": "*",
-    "bak": "^2.0.0"
+    "bak": "*"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bcryptjs": "^2.4.3",
     "boom": "^5.2.0",
     "hoek": "^4.2.0",
     "joi": "^10.6.0",
+    "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.11.9"
   }

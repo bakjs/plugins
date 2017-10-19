@@ -1,11 +1,8 @@
 const Boom = require('boom')
 const Axios = require('axios')
 const _ = require('lodash')
-const { Utils } = require('bak')
 const AuthBaseProvider = require('./base')
-
-const { jwt_verify, jwt_decode, hash_verify, jwt_sign, uid } = Utils.security
-const { realIP } = Utils
+const { jwt_verify, jwt_decode, hash_verify, jwt_sign, uid } = require('./base')
 
 class AuthDefaultProvider extends AuthBaseProvider {
   constructor (options = {}) {
@@ -270,3 +267,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
 }
 
 module.exports = AuthDefaultProvider
+
+function realIP (request) {
+  return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
+}

@@ -1,23 +1,19 @@
 {
   "name": "@bakjs/logging",
-  "version": "0.3.2",
+  "version": "2.0.0",
   "license": "MIT",
   "main": "lib/plugin.js",
   "publishConfig": {
     "access": "public"
   },
   "contributors": [
-    {
-      "name": "Pooya Parsa",
-      "email": "pooya@pi0.ir"
-    }
+    "Pooya Parsa <pooya@pi0.ir>"
   ],
   "files": [
     "lib"
   ],
   "peerDependencies": {
-    "@bakjs/mongo": "*",
-    "bak": "^2.0.0"
+    "@bakjs/mongo": "*"
   },
   "dependencies": {
     "chalk": "^2.1.0",

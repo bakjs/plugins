@@ -7,18 +7,12 @@
     "access": "public"
   },
   "contributors": [
-    {
-      "name": "Iman Tabrizian",
-      "email": "tabrizian@outlook.com"
-    }
+    "Iman Tabrizian <tabrizian@outlook.com>"
   ],
   "files": [
     "lib"
   ],
   "dependencies": {
     "haho": "^0.0.2"
-  },
-  "peerDependencies": {
-    "bak": "^2.0.0"
   }
 }

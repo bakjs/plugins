@@ -1,8 +1,5 @@
 const Boom = require('boom')
 const Hoek = require('hoek')
-const { Utils } = require('bak')
-
-const { realIP } = Utils
 
 exports.register = function HapiRateLimit (plugin, _options) {
   // Apply default options
@@ -93,4 +90,8 @@ const defaults = {
     limit: 60,
     duration: 60000
   }
+}
+
+function realIP (request) {
+  return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
 }
