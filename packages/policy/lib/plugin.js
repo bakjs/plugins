@@ -4,9 +4,9 @@ const AuthorizePlugin = require('./authorize-plugin')
 exports.register = function (server, options) {
   if (!options) options = {}
 
-  server.register({ register: GuardPlugin, options })
+  server.register({ plugin: GuardPlugin, options })
 
-  server.register({ register: AuthorizePlugin, options })
+  server.register({ plugin: AuthorizePlugin, options })
 }
 
 exports.pkg = require('../package.json')

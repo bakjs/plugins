@@ -23,7 +23,5 @@ exports.register = function (server, options) {
   })
 }
 
-exports.register.attributes = {
-  name: 'bak-policy-guard',
-  dependencies: ['bak-policy-authorize']
-}
+exports.pkg = require('../package.json')
+exports.name = '@bakjs/policy/guard'

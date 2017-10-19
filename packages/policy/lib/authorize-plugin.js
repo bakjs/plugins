@@ -52,3 +52,6 @@ exports.register = function authorizePlugin (server, options) {
 exports.register.attributes = {
   name: 'bak-policy-authorize'
 }
+
+exports.pkg = require('../package.json')
+exports.name = '@bakjs/policy/authorize'
