@@ -1,33 +1,37 @@
-# Hapi plugins for BAK
 
-<h1 align="center">Packages</h1>
+<h1 align="center">BAK Plugins</h1>
 
-### auth
-- [Source](./packages/auth)
+## Core
 
-### logging
-- [Source](./packages/logging)
+**compat:** [Source](./packages/compat)
 
-### minio
-- [Source](./packages/minio)
+**input:** [Source](./packages/input)
 
-### mongo
-- [Source](./packages/mongo)
+**route-table:** [Source](./packages/route-table)
 
-### nunjucks
-- [Source](./packages/nunjucks)
+**shortcuts:** [Source](./packages/shortcuts)
+
+## Extra
+
+**auth:** [Source](./packages/auth)
+
+**graphql:** [Source](./packages/graphql)
+
+**logging:** [Source](./packages/logging)
+
+**minio:** [Source](./packages/minio)
+
+**mongo:** [Source](./packages/mongo)
+
+**nunjucks:** [Source](./packages/nunjucks)
+
+**policy:** [Source](./packages/policy)
+
+**ratelimit:** [Source](./packages/ratelimit)
+
+**haho:** [Source](./packages/haho)
 
 
-### policy
-- [Source](./packages/policy)
-
-### ratelimit
-- [Source](./packages/ratelimit)
-
-### haho
-- [Source](./packages/haho)
-
-
-# License
+<h1 align="center">License</h1>
 Released under The MIT [LICENSE](./LICENSE).       
 Copyright (c) 2016-2017 Fandogh - Pooya Parsa
