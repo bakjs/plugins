@@ -10,13 +10,13 @@ exports.register = function (server, options) {
     try {
       for (let i = 0; i < route_guards.length; i++) {
         if (!(await request.can(route_guards[i]))) {
-          return Boom.unauthorized(route_guards[i].name || route_guards[i])
+          throw Boom.unauthorized(route_guards[i].name || route_guards[i])
         }
       }
     } catch (error) {
       // Log and reject unhandled errors
       server.log(['error', 'authorize', 'guard'], { error })
-      return Boom.unauthorized()
+      throw Boom.unauthorized()
     }
 
     return h.continue

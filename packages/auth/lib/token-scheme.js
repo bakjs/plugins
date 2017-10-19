@@ -41,7 +41,7 @@ const tokenScheme = function (server, { authOptions, authProvider }) {
 
     // Ensure correct token type
     if (parts[0].toLowerCase() !== options.tokenType.toLowerCase()) {
-      return Boom.unauthorized(null, options.tokenType)
+      throw Boom.unauthorized(null, options.tokenType)
     }
 
     // Try to login
