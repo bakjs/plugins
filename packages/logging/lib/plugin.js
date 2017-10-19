@@ -6,13 +6,13 @@ exports.register = function (server, options) {
   let plugins = []
 
   plugins.push({
-    register: GoodPlugin,
+    plugin: GoodPlugin,
     options
   })
 
   if (options.audit) {
     plugins.push({
-      register: AuditPlugin,
+      plugin: AuditPlugin,
       options
     })
   }

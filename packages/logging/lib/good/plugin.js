@@ -63,7 +63,7 @@ exports.register = function (server, config) {
   ]
 
   return server.register({
-    register: Good,
+    plugin: Good,
     options: Object.assign({}, config.options, { reporters })
   })
 }
