@@ -1,9 +1,19 @@
 
 <h1 align="center">BAK plugins</h1>
+<p align="center">
+Plugins for <a href="https://github.com/bakjs/bak">BAK</a>
+</p>
 
-Plugins for [bak.js](https://github.com/bakjs/bak).
+<p align="center">
+<a href="https://github.com/bakjs/plugins">
+    <img alt="" src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square">
+</a>
+<a href="https://hapijs.com/">
+    <img alt="" src="https://img.shields.io/badge/hapi.js-17.x-yellow.svg?style=flat-square">
+</a>
+</p>
 
-✓ This plugins are compatible with any Hapi 17.x+ server too.
+✓ This plugins are compatible with any Hapi 17.x+ server too
 
 <!-- Core plugins -->
 <h2 align="center">Core</h2>
@@ -38,8 +48,8 @@ Plugins for [bak.js](https://github.com/bakjs/bak).
 **haho:** [Source](./plugins/haho)
 
 <!-- License -->
-<h1 align="center">License</h1>
-
-Released under The MIT [LICENSE](./LICENSE). 
+<h2 align="center">License</h2>
       
 Copyright (c) 2016-2017 Fandogh - Pooya Parsa
+
+Released under The MIT [LICENSE](./LICENSE)
