@@ -1,8 +1,13 @@
 
-<h1 align="center">BAK plugins</h1>
 <p align="center">
-Plugins for <a href="https://github.com/bakjs/bak">BAK</a>
+<a href="https://bak.js.org">
+    <img src="https://github.com/bakjs/bak/raw/master/.assets/logo.webp" width="300px" alt="Bak.js">
+</a>
 </p>
+
+<h1 align="center">
+    Plugins for <a href="https://github.com/bakjs/bak">BAK</a>
+</h1>
 
 <p align="center">
 <a href="https://github.com/bakjs/plugins">
