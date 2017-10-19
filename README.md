@@ -1,37 +1,41 @@
 
 <h1 align="center">BAK Plugins</h1>
 
-## Core
+<!-- Core plugins -->
+<h2 align="center">Core</h2>
 
-**compat:** [Source](./packages/compat)
+**compat:** [Source](./plugins/compat)
 
-**input:** [Source](./packages/input)
+**input:** [Source](./plugins/input)
 
-**route-table:** [Source](./packages/route-table)
+**route-table:** [Source](./plugins/route-table)
 
-**shortcuts:** [Source](./packages/shortcuts)
+**shortcuts:** [Source](./plugins/shortcuts)
 
-## Extra
+<!-- Extra plugins -->
+<h2 align="center">Extra</h2>
 
-**auth:** [Source](./packages/auth)
+**auth:** [Source](./plugins/auth)
 
-**graphql:** [Source](./packages/graphql)
+**graphql:** [Source](./plugins/graphql)
 
-**logging:** [Source](./packages/logging)
+**logging:** [Source](./plugins/logging)
 
-**minio:** [Source](./packages/minio)
+**minio:** [Source](./plugins/minio)
 
-**mongo:** [Source](./packages/mongo)
+**mongo:** [Source](./plugins/mongo)
 
-**nunjucks:** [Source](./packages/nunjucks)
+**nunjucks:** [Source](./plugins/nunjucks)
 
-**policy:** [Source](./packages/policy)
+**policy:** [Source](./plugins/policy)
 
-**ratelimit:** [Source](./packages/ratelimit)
+**ratelimit:** [Source](./plugins/ratelimit)
 
-**haho:** [Source](./packages/haho)
+**haho:** [Source](./plugins/haho)
 
-
+<!-- License -->
 <h1 align="center">License</h1>
-Released under The MIT [LICENSE](./LICENSE).       
+
+Released under The MIT [LICENSE](./LICENSE). 
+      
 Copyright (c) 2016-2017 Fandogh - Pooya Parsa
