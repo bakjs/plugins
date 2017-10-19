@@ -1,5 +1,9 @@
 
-<h1 align="center">BAK Plugins</h1>
+<h1 align="center">BAK plugins</h1>
+
+Plugins for [bak.js](https://github.com/bakjs/bak).
+
+✓ This plugins are compatible with any Hapi 17.x+ server too.
 
 <!-- Core plugins -->
 <h2 align="center">Core</h2>
