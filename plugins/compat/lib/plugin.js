@@ -28,7 +28,7 @@ function wrapPlugin (originalPlugin) {
   const name = plugin.name || (plugin.pkg && plugin.pkg.name) || plugin.register.name
 
   if (hasNext) {
-    warn('ASYNC_PLUGINS', 'plugins should return a promise instead of next callback', name)
+    warn('ASYNC_PLUGINS', 'plugins should return a promise instead of accepting next/callback argument', name)
   }
 
   plugin.register = function (server, options) {
@@ -80,8 +80,55 @@ function wrapServerRegister (originalServerRegister) {
   return serverRegister
 }
 
-function supportRegistrations (server) {
-  server.register = wrapServerRegister(server.register)
+function wrapEventMethod (originalMethod) {
+  // method' params are not always the same when calling server.ext
+  // We need to use some tests for *guessing* if next/callback is there
+  const fnParamNames = getFnParamNames(originalMethod)
+  const lastParamName = fnParamNames.length ? fnParamNames[fnParamNames.length - 1] : ''
+  const hasNext = lastParamName === 'next' || lastParamName === 'callback' || lastParamName === 'cb'
+
+  if (!hasNext) {
+    return originalMethod
+  }
+
+  warn('ASYNC_SERVER_EXT', 'methods for server.ext should return promise instead of accepting next/callback argument', originalMethod)
+
+  return function () {
+    return new Promise((resolve, reject) => {
+      const next = err => {
+        if (err) {
+          return reject(err)
+        }
+        resolve()
+      }
+      return originalMethod.call(this, ...[].concat(arguments), next)
+    })
+  }
+}
+
+function wrapServerExt (originalServerExt) {
+  const serverExt = function (event, method, options) {
+    if (Array.isArray(event)) {
+      return Promise.all(event.map(e => serverExt.call(this, e)))
+    }
+
+    if (method) {
+      method = wrapEventMethod(method)
+      return originalServerExt.call(this, event, method, options)
+    }
+
+    // Clone to prevent mutation
+    event = Object.assign({}, event)
+
+    if (Array.isArray(event.method)) {
+      event.method = event.method.map(m => wrapEventMethod(m))
+    } else if (event.method) {
+      event.method = wrapEventMethod(event.method)
+    }
+
+    return originalServerExt.call(this, event)
+  }
+  return serverExt
 }
 
 function supportEvents (server) {
@@ -99,12 +146,16 @@ function install (server, isRoot) {
     supportEvents(server)
   }
 
-  supportRegistrations(server)
+  server.register = wrapServerRegister(server.register)
+  server.ext = wrapServerExt(server.ext)
 }
 
 exports.register = function bakCompat (server, config) {
-  const rootServer = config._bak.server.hapi
-  install(rootServer, true)
+  if (!config.server) {
+    console.error(Chalk.yellow('[@bakjs/compat] `config.server` is not provided!'))
+    return
+  }
+  install(config.server, true)
 }
 
 exports.pkg = require('../package.json')
