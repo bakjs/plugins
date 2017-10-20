@@ -11,5 +11,8 @@
   ],
   "files": [
     "lib"
-  ]
+  ],
+  "dependencies": {
+    "caller-id": "^0.1.0"
+  }
 }

@@ -1,7 +1,17 @@
 const Chalk = require('chalk')
+const CallerId = require('caller-id')
 
 function warn (type, message, at) {
-  console.warn(' ⚠️ ', Chalk.yellow(`[${at}]`), Chalk.yellow(message), Chalk.grey(`(${type})`), 'https://git.io/vd79N')
+  if (at) {
+    console.warn('   ' + Chalk.red(at))
+  }
+  console.warn('⚠️ ', Chalk.yellow(`[${type}]`), Chalk.yellow(message), Chalk.grey('(see https://git.io/vd79N)'))
+  console.warn('')
+}
+
+function caller () {
+  const { filePath, lineNumber, functionName } = CallerId.getData(caller.caller)
+  return `${filePath}:${lineNumber}@${functionName}`
 }
 
 function isPlugin (obj) {
@@ -28,7 +38,7 @@ function wrapPlugin (originalPlugin) {
   const name = plugin.name || (plugin.pkg && plugin.pkg.name) || plugin.register.name
 
   if (hasNext) {
-    warn('ASYNC_PLUGINS', 'plugins should return a promise instead of accepting next/callback argument', name)
+    warn('ASYNC_PLUGINS', 'plugins should return a promise instead of accepting next/callback argument', 'plugin: ' + name)
   }
 
   plugin.register = function (server, options) {
@@ -91,9 +101,8 @@ function wrapEventMethod (originalMethod) {
     return originalMethod
   }
 
-  warn('ASYNC_SERVER_EXT', 'methods for server.ext should return promise instead of accepting next/callback argument', originalMethod)
-
-  return function () {
+  const wrappedFn = function () {
+    warn('ASYNC_SERVER_EXT', 'methods for server.ext should return promise instead of accepting next/callback argument', caller())
     return new Promise((resolve, reject) => {
       const next = err => {
         if (err) {
@@ -104,6 +113,8 @@ function wrapEventMethod (originalMethod) {
       return originalMethod.call(this, ...[].concat(arguments), next)
     })
   }
+
+  return wrappedFn
 }
 
 function wrapServerExt (originalServerExt) {
@@ -133,7 +144,7 @@ function wrapServerExt (originalServerExt) {
 
 function supportEvents (server) {
   server.decorate('server', 'on', function (event, listener) {
-    // https://github.com/hapijs/hapi/issues/3571
+    warn('SERVER_ON', 'server.on is no longer available, use server.events.on instead!', caller())
     if (event === 'tail') {
       return
     }
