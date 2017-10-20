@@ -1,5 +1,7 @@
 const Chalk = require('chalk')
 const CallerId = require('caller-id')
+const Hoek = require('hoek')
+const Joi = require('joi')
 
 function warn (type, message, at) {
   if (at) {
@@ -23,7 +25,7 @@ function getFnParamNames (fn) {
   return match ? match[0].replace(/[()]/gi, '').replace(/\s/gi, '').split(',') : []
 }
 
-function wrapPlugin (originalPlugin) {
+function wrapPlugin (originalPlugin, compatConfig) {
   const plugin = Object.assign({}, originalPlugin)
 
   // Support for attributes
@@ -44,7 +46,7 @@ function wrapPlugin (originalPlugin) {
   plugin.register = function (server, options) {
     return new Promise((resolve, reject) => {
       // Recursively add compat support as each plugin has it's own server realm
-      install(server, false)
+      install(server, compatConfig, false)
 
       const result = originalRegister.call(this, server, options, err => {
         if (err) {
@@ -62,7 +64,7 @@ function wrapPlugin (originalPlugin) {
   return plugin
 }
 
-function wrapServerRegister (originalServerRegister) {
+function wrapServerRegister (originalServerRegister, compatConfig) {
   const serverRegister = function (registration, options) {
     if (Array.isArray(registration)) {
       return Promise.all(registration.map(r => serverRegister.call(this, r, options)))
@@ -80,9 +82,9 @@ function wrapServerRegister (originalServerRegister) {
 
     // Wrap plugin
     if (isPlugin(registration)) {
-      registration = wrapPlugin(registration)
+      registration = wrapPlugin(registration, compatConfig)
     } else {
-      registration.plugin = wrapPlugin(registration.plugin)
+      registration.plugin = wrapPlugin(registration.plugin, compatConfig)
     }
 
     // Call to original register
@@ -153,21 +155,45 @@ function supportEvents (server) {
   })
 }
 
-function install (server, isRoot) {
-  if (isRoot) {
+function install (server, compatConfig, isRoot) {
+  if (isRoot && compatConfig.events) {
     supportEvents(server)
   }
 
-  server.register = wrapServerRegister(server.register)
-  server.ext = wrapServerExt(server.ext)
+  if (compatConfig.register) {
+    server.register = wrapServerRegister(server.register, compatConfig)
+  }
+
+  if (compatConfig.ext) {
+    server.ext = wrapServerExt(server.ext)
+  }
 }
 
 exports.register = function bakCompat (server, config) {
-  if (!config.server) {
-    console.error(Chalk.yellow('[@bakjs/compat] `config.server` is not provided!'))
-    return
-  }
-  install(config.server, true)
+  Hoek.assert(config.server, 'Missing `server` in config')
+  Joi.assert(config, internals.schema)
+
+  const _server = config.server
+  delete config.server
+
+  config = Hoek.applyToDefaults(internals.defaults, config)
+
+  install(_server, config, true)
 }
 
 exports.pkg = require('../package.json')
+
+const internals = {}
+
+internals.defaults = {
+  events: true,
+  register: true,
+  ext: true
+}
+
+internals.schema = {
+  events: Joi.boolean(),
+  register: Joi.boolean(),
+  ext: Joi.boolean(),
+  server: Joi.required()
+}
