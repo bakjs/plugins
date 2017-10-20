@@ -23,8 +23,6 @@
 <!-- Core plugins -->
 <h2 align="center">Core</h2>
 
-**compat:** [Source](./plugins/compat)
-
 **input:** [Source](./plugins/input)
 
 **route-table:** [Source](./plugins/route-table)
