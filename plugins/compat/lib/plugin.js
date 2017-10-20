@@ -73,6 +73,7 @@ function wrapServerRegister (originalServerRegister) {
 
     // Support for old { register } syntax
     if (isPlugin(registration.register)) {
+      warn('SERVER_REGISTER', 'server registrations are now { plugin, options } instead of { register, options }', caller())
       registration.plugin = registration.register
       delete registration.register
     }
