@@ -2,7 +2,7 @@ const Boom = require('boom')
 const Axios = require('axios')
 const _ = require('lodash')
 const AuthBaseProvider = require('./base')
-const { jwt_verify, jwt_decode, hash_verify, jwt_sign, uid } = require('./base')
+const { jwt_verify, jwt_decode, hash_verify, jwt_sign, uid } = require('./utils')
 
 class AuthDefaultProvider extends AuthBaseProvider {
   constructor (options = {}) {
