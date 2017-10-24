@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/bakjs/plugins/compare/@bakjs/mongo@0.2.1...@bakjs/mongo@2.0.1) (2017-10-24)
+
+
+
+
+**Note:** Version bump only for package @bakjs/mongo
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2017-10-07)
 
