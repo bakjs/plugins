@@ -27,4 +27,6 @@ exports.register = (server, authOptions) => {
 
 exports.pkg = require('../package.json')
 
+exports.once = true
+
 exports.User = User

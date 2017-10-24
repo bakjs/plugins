@@ -10,6 +10,8 @@ exports.register = function bakShortcuts (server, config) {
 
 exports.pkg = require('../package.json')
 
+exports.once = true
+
 function realIP (request) {
   return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
 }

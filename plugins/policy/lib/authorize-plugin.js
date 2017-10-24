@@ -55,3 +55,4 @@ exports.register.attributes = {
 
 exports.pkg = require('../package.json')
 exports.name = '@bakjs/policy/authorize'
+exports.once = true

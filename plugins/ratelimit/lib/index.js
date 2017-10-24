@@ -69,6 +69,8 @@ exports.register = function HapiRateLimit (plugin, _options) {
 
 exports.pkg = require('../package.json')
 
+exports.once = true
+
 // Set rate-limit headers
 function setHeaders (headers, ratelimit, XHeaders = false) {
   if (XHeaders) {

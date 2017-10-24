@@ -25,3 +25,4 @@ exports.register = function (server, options) {
 
 exports.pkg = require('../package.json')
 exports.name = '@bakjs/policy/guard'
+exports.once = true

@@ -39,5 +39,7 @@ exports.register = function (server, config = {}) {
 
 exports.pkg = require('../package.json')
 
+exports.once = true
+
 exports.Model = Model
 exports.Schema = Mongoose.Schema

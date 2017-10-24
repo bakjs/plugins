@@ -7,6 +7,8 @@ exports.register = function (server, options) {
   })
 }
 
+exports.once = true
+
 exports.pkg = require('../package.json')
 
 exports.error = error

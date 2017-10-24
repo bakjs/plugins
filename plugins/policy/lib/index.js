@@ -11,5 +11,4 @@ exports.register = function (server, options) {
 
 exports.pkg = require('../package.json')
 
-exports.GuardPlugin = GuardPlugin
-exports.AuthorizePlugin = AuthorizePlugin
+exports.once = true

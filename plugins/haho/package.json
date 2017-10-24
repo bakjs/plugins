@@ -2,7 +2,7 @@
   "name": "@bakjs/haho",
   "version": "0.1.0",
   "license": "MIT",
-  "main": "lib/plugin.js",
+  "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
