@@ -32,6 +32,8 @@
 <!-- Extra plugins -->
 <h2 align="center">Extra</h2>
 
+**audit:** [Source](./plugins/audit)
+
 **auth:** [Source](./plugins/auth)
 
 **graphql:** [Source](./plugins/graphql)
