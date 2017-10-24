@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.1.0...@bakjs/logging@2.2.0) (2017-10-24)
+
+
+### Features
+
+* **logging:** remvoe dependency from bak ([c0f2d72](https://github.com/bakjs/plugins/commit/c0f2d72))
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@0.3.2...@bakjs/logging@2.1.0) (2017-10-24)
 
