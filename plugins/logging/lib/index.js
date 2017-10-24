@@ -1,9 +1,9 @@
-const { error } = require('./errors')
+const Errors = require('./errors')
 
 exports.register = function (server, options) {
   server.events.on({ name: 'request', channels: 'internal' }, (request, { timestamp, error }, tags) => {
     // const tagsStr = '[' + Object.keys(tags).join('][') + ']'
-    error(error)
+    Errors.error(error)
   })
 }
 
@@ -11,4 +11,4 @@ exports.once = true
 
 exports.pkg = require('../package.json')
 
-exports.error = error
+exports.error = Errors.error
