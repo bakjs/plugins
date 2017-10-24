@@ -1,5 +1,5 @@
-import GoodAudit from './good-audit'
-import Audit from './model'
+const GoodAudit = require('./good-audit')
+const Audit = require('./model')
 
 exports.register = function (server, config) {
   // Audit Helper
@@ -27,7 +27,7 @@ exports.register = function (server, config) {
 }
 
 exports.name = '@bakjs/audit'
-exports.pkg = require('../../package.json')
+exports.pkg = require('../package.json')
 
 exports.GoodAudit = GoodAudit
 exports.Audit = Audit
