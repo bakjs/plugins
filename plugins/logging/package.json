@@ -2,7 +2,7 @@
   "name": "@bakjs/logging",
   "version": "2.1.0",
   "license": "MIT",
-  "main": "lib/plugin.js",
+  "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
@@ -12,7 +12,7 @@
   "files": [
     "lib"
   ],
-  "peerDependencies": {
-    "bak": "*"
+  "dependencies": {
+    "pretty-error": "^2.1.1"
   }
 }
