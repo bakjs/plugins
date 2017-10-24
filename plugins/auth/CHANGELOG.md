@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@0.1.8...@bakjs/auth@2.1.0) (2017-10-24)
+
+
+### Bug Fixes
+
+* **auth:** invalid require ([5e4ca00](https://github.com/bakjs/plugins/commit/5e4ca00))
+
+
+### Features
+
+* **logging:** lightweight rewrite ([6727e29](https://github.com/bakjs/plugins/commit/6727e29))
+
+
+
+
 <a name="0.1.8"></a>
 ## 0.1.8 (2017-10-07)
 
