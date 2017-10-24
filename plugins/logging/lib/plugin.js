@@ -1,35 +1,10 @@
-const GoodPlugin = require('./good/plugin')
-const AuditPlugin = require('./audit/plugin')
-const Audit = require('./audit/model')
+const { Errors } = require('bak')
 
 exports.register = function (server, options) {
-  let plugins = []
-
-  plugins.push({
-    plugin: GoodPlugin,
-    options
+  server.events.on({ name: 'request', channels: 'internal' }, (request, { timestamp, error }, tags) => {
+    // const tagsStr = '[' + Object.keys(tags).join('][') + ']'
+    Errors.error(error)
   })
-
-  if (options.audit) {
-    plugins.push({
-      plugin: AuditPlugin,
-      options
-    })
-  }
-
-  // Non production logging
-  if (process.env.NODE_ENV !== 'production') {
-    // Print full error traces to console
-    server.on('log', (event, tags) => {
-      if (tags.error) {
-        console.error(event)
-      }
-    })
-  }
-
-  return server.register(plugins)
 }
 
 exports.pkg = require('../package.json')
-
-exports.Audit = Audit

@@ -42,7 +42,7 @@ class $AuthController extends Controller {
     return 'LOGGED_OUT'
   }
 
-  auth_user (request, h) {
+  async auth_user (request, h) {
     return { user: request.user }
   }
 
