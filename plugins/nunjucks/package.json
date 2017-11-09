@@ -13,9 +13,9 @@
     "lib"
   ],
   "dependencies": {
-    "inert": "^4.2.1",
+    "inert": "^5.0.1",
     "nunjucks": "^3.0.1",
     "path": "^0.12.7",
-    "vision": "^4.1.1"
+    "vision": "^5.1.0"
   }
 }

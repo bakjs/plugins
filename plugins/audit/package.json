@@ -14,8 +14,5 @@
   ],
   "peerDependencies": {
     "@bakjs/mongo": "*"
-  },
-  "dependencies": {
-    "good": "^7.3.0"
   }
 }

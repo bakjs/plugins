@@ -24,6 +24,10 @@ pe.skip((traceLine, lineNumber) => {
 pe.skipNodeFiles()
 
 function error (err) {
+  if (!err) {
+    return
+  }
+
   /* eslint-disable no-console */
   console.log(pe.render(err))
 }
