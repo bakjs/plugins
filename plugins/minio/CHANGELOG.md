@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/bakjs/plugins/compare/@bakjs/minio@0.1.3...@bakjs/minio@2.0.1) (2017-11-09)
+
+
+
+
+**Note:** Version bump only for package @bakjs/minio
+
 <a name="0.1.3"></a>
 ## 0.1.3 (2017-10-07)
 

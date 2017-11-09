@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.0.2"></a>
+## [2.0.2](https://github.com/bakjs/plugins/compare/@bakjs/nunjucks@2.0.1...@bakjs/nunjucks@2.0.2) (2017-11-09)
+
+
+
+
+**Note:** Version bump only for package @bakjs/nunjucks
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/bakjs/plugins/compare/@bakjs/nunjucks@0.1.4...@bakjs/nunjucks@2.0.1) (2017-10-24)
 
