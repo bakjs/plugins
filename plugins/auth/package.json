@@ -17,11 +17,11 @@
     "bak": "*"
   },
   "dependencies": {
-    "axios": "^0.17.0",
+    "axios": "^0.17.1",
     "bcryptjs": "^2.4.3",
     "boom": "^7.1.1",
     "hoek": "^5.0.2",
-    "joi": "^13.0.1",
+    "joi": "^13.0.2",
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4"
   }

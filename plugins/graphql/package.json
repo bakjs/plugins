@@ -14,6 +14,6 @@
   ],
   "dependencies": {
     "graphql-server-hapi": "^1.2.0",
-    "graphql-tools": "^2.7.2"
+    "graphql-tools": "^2.10.0"
   }
 }
