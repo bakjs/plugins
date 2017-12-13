@@ -16,7 +16,7 @@
   "dependencies": {
     "cachegoose": "^4.0.1",
     "lodash": "^4.17.4",
-    "mongoose": "^4.13.5",
+    "mongoose": "^4.13.7",
     "mongoose-fill": "^1.7.0"
   }
 }
