@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@2.1.3...@bakjs/auth@3.0.0) (2017-12-18)
+
+
+### Features
+
+* **auth:** Rewrite for bak 3.x ([30573ba](https://github.com/bakjs/plugins/commit/30573ba))
+
+
+### BREAKING CHANGES
+
+* **auth:** requires bak >= 3
+
+
+
+
 <a name="2.1.3"></a>
 ## [2.1.3](https://github.com/bakjs/plugins/compare/@bakjs/auth@2.1.2...@bakjs/auth@2.1.3) (2017-11-29)
 
