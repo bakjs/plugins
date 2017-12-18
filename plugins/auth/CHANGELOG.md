@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.1"></a>
+## [3.0.1](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.0.0...@bakjs/auth@3.0.1) (2017-12-18)
+
+
+### Bug Fixes
+
+* **auth:** initialize controller ([f62701e](https://github.com/bakjs/plugins/commit/f62701e))
+
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@2.1.3...@bakjs/auth@3.0.0) (2017-12-18)
 
