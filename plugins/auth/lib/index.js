@@ -2,7 +2,7 @@ const AuthController = require('./controller')
 const TokenScheme = require('./token-scheme')
 const User = require('./provider/user')
 
-exports.register = (server, authOptions) => {
+exports.register = async (server, authOptions) => {
   // Create Auth provider instance
   const Provider = authOptions.provider || require('./provider/default')
   let authProvider = new Provider(authOptions)
@@ -21,8 +21,8 @@ exports.register = (server, authOptions) => {
 
   // Register Auth Controller
   const authController = new AuthController(authProvider)
-  authController.hapi = server
-  server.route(authController.routes())
+  await authController.init()
+  server.route(await authController.routes())
 }
 
 exports.pkg = require('../package.json')
