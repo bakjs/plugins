@@ -2,7 +2,7 @@ const Errors = require('./errors')
 
 exports.register = function (server, options) {
   server.events.on({ name: 'request', channels: 'internal' }, (request, { timestamp, error }, tags) => {
-    if (!error || error.isBoom) {
+    if (!error) {
       return
     }
 
