@@ -14,7 +14,7 @@ class $AuthController extends Controller {
 
     if (this.authProvider.loginSupported) {
       this.post('/auth/login', this.login)
-      this.post('/auth/logout', this.logout, {auth: {mode: 'required'}})
+      this.any('/auth/logout', this.logout, {auth: {mode: 'required'}})
     }
 
     if (this.authProvider.oauthSupported) {
