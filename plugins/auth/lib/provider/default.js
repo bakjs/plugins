@@ -142,6 +142,11 @@ class AuthDefaultProvider extends AuthBaseProvider {
     // Validate user
     await this.validateUser(user)
 
+    // Ensure password is not empty
+    if (!password || !password.length || typeof password !== 'string') {
+      throw Boom.unauthorized('INVALID_PASSWORD')
+    }
+
     // Validate password
     await this.validatePassword(user, password)
 
