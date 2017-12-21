@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.0.1...@bakjs/auth@3.0.2) (2017-12-21)
+
+
+### Bug Fixes
+
+* **auth:** logout with any method ([5537db0](https://github.com/bakjs/plugins/commit/5537db0))
+
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.0.0...@bakjs/auth@3.0.1) (2017-12-18)
 
