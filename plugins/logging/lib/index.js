@@ -1,8 +1,10 @@
 const Errors = require('./errors')
 
 exports.register = function (server, options) {
+  const isDev = process.env.NODE_ENV !== 'production'
+
   server.events.on({ name: 'request', channels: 'internal' }, (request, { timestamp, error }, tags) => {
-    if (!error) {
+    if (!error || (!isDev && error.isBoom)) {
       return
     }
 
