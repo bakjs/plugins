@@ -6,17 +6,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>"
-  ],
-  "files": [
-    "lib",
-    "index.js"
-  ],
+  "contributors": ["Pooya Parsa <pooya@pi0.ir>"],
+  "files": ["lib", "index.js"],
   "dependencies": {
-    "cachegoose": "^4.0.1",
+    "cachegoose": "^5.0.0",
     "lodash": "^4.17.4",
-    "mongoose": "^4.13.7",
+    "mongoose": "^5.0.1",
     "mongoose-fill": "^1.7.0"
   }
 }
