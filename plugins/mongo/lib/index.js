@@ -4,19 +4,18 @@ const Model = require('./model')
 // Use native promises
 Mongoose.Promise = global.Promise
 
-// Register mongoose-fill
 // @see https://github.com/whitecolor/mongoose-fill
 require('mongoose-fill')
+
+// @see https://github.com/boblauer/cachegoose
+const cachegoose = require('cachegoose')
 
 exports.register = function (server, config = {}) {
   // Use custom function to log collection methods + arguments
   Mongoose.set('debug', config.debug)
 
   // Register cachegoose
-  // @see https://github.com/boblauer/cachegoose
   if (config.cache !== false) {
-    // Require only when needed
-    const cachegoose = require('cachegoose')
     cachegoose(Mongoose, config.cache)
   }
 
