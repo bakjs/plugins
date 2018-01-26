@@ -6,12 +6,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>"
-  ],
-  "files": [
-    "lib"
-  ],
+  "contributors": ["Pooya Parsa <pooya@pi0.ir>"],
+  "files": ["lib"],
   "peerDependencies": {
     "@bakjs/mongo": "*",
     "bak": "*"
@@ -21,8 +17,8 @@
     "bcryptjs": "^2.4.3",
     "boom": "^7.1.1",
     "hoek": "^5.0.2",
-    "joi": "^13.0.2",
-    "jsonwebtoken": "^8.1.0",
+    "joi": "^13.1.1",
+    "jsonwebtoken": "^8.1.1",
     "lodash": "^4.17.4"
   }
 }

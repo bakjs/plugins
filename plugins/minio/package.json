@@ -6,14 +6,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>"
-  ],
-  "files": [
-    "lib"
-  ],
+  "contributors": ["Pooya Parsa <pooya@pi0.ir>"],
+  "files": ["lib"],
   "dependencies": {
-    "config": "^1.28.1",
+    "config": "^1.29.2",
     "minio": "^3.2.3"
   }
 }
