@@ -1,13 +1,18 @@
 {
   "name": "@bakjs/mongo",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "license": "MIT",
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
-  "contributors": ["Pooya Parsa <pooya@pi0.ir>"],
-  "files": ["lib", "index.js"],
+  "contributors": [
+    "Pooya Parsa <pooya@pi0.ir>"
+  ],
+  "files": [
+    "lib",
+    "index.js"
+  ],
   "dependencies": {
     "cachegoose": "^5.0.0",
     "lodash": "^4.17.4",

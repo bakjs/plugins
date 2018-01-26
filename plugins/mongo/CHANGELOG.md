@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/bakjs/plugins/compare/@bakjs/mongo@2.0.4...@bakjs/mongo@3.0.0) (2018-01-26)
+
+
+### misc
+
+* **mongo:** update to mongoose 5.x ([3b56e90](https://github.com/bakjs/plugins/commit/3b56e90))
+
+
+### BREAKING CHANGES
+
+* **mongo:** https://github.com/Automattic/mongoose/blob/master/migrating_to_5.md
+
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/bakjs/plugins/compare/@bakjs/mongo@2.0.3...@bakjs/mongo@2.0.4) (2017-12-13)
 

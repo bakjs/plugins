@@ -1,13 +1,17 @@
 {
   "name": "@bakjs/minio",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "MIT",
   "main": "lib/index.js",
   "publishConfig": {
     "access": "public"
   },
-  "contributors": ["Pooya Parsa <pooya@pi0.ir>"],
-  "files": ["lib"],
+  "contributors": [
+    "Pooya Parsa <pooya@pi0.ir>"
+  ],
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "config": "^1.29.2",
     "minio": "^3.2.3"
