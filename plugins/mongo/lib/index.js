@@ -23,7 +23,6 @@ exports.register = function (server, config = {}) {
     const connection = config.connections[connection_name]
 
     const clientOptions = {
-      useMongoClient: true,
       promiseLibrary: global.Promise
     }
 
