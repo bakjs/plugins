@@ -6,14 +6,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "contributors": [
-    "Pooya Parsa <pooya@pi0.ir>"
-  ],
-  "files": [
-    "lib"
-  ],
+  "contributors": ["Pooya Parsa <pooya@pi0.ir>"],
+  "files": ["lib"],
   "dependencies": {
-    "graphql-server-hapi": "^1.3.0",
-    "graphql-tools": "^2.13.0"
+    "graphql-server-hapi": "^1.3.2",
+    "graphql-tools": "^2.19.0"
   }
 }
