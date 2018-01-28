@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.3.0"></a>
+# [2.3.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.2.4...@bakjs/logging@2.3.0) (2018-01-28)
+
+
+### Features
+
+* **logging:** better Boom error handling ([eafe467](https://github.com/bakjs/plugins/commit/eafe467))
+
+
+
+
 <a name="2.2.4"></a>
 ## [2.2.4](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.2.3...@bakjs/logging@2.2.4) (2017-12-21)
 
