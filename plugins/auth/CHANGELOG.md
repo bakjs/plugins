@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.0.4...@bakjs/auth@3.1.0) (2018-02-08)
+
+
+### Features
+
+* export explicit configKey ([add9dfb](https://github.com/bakjs/plugins/commit/add9dfb))
+
+
+
+
 <a name="3.0.4"></a>
 ## [3.0.4](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.0.3...@bakjs/auth@3.0.4) (2018-01-26)
 

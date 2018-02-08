@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.2.0"></a>
+# [2.2.0](https://github.com/bakjs/plugins/compare/@bakjs/audit@2.1.1...@bakjs/audit@2.2.0) (2018-02-08)
+
+
+### Features
+
+* export explicit configKey ([add9dfb](https://github.com/bakjs/plugins/commit/add9dfb))
+
+
+
+
 <a name="2.1.1"></a>
 ## [2.1.1](https://github.com/bakjs/plugins/compare/@bakjs/audit@2.1.0...@bakjs/audit@2.1.1) (2017-11-09)
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/bakjs/plugins/compare/@bakjs/haho@0.1.1...@bakjs/haho@0.2.0) (2018-02-08)
+
+
+### Features
+
+* export explicit configKey ([add9dfb](https://github.com/bakjs/plugins/commit/add9dfb))
+
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/bakjs/plugins/compare/@bakjs/haho@0.1.0...@bakjs/haho@0.1.1) (2017-10-24)
 

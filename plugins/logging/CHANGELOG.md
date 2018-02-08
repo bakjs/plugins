@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.5.0"></a>
+# [2.5.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.4.0...@bakjs/logging@2.5.0) (2018-02-08)
+
+
+### Features
+
+* export explicit configKey ([add9dfb](https://github.com/bakjs/plugins/commit/add9dfb))
+
+
+
+
 <a name="2.4.0"></a>
 # [2.4.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.3.0...@bakjs/logging@2.4.0) (2018-02-08)
 

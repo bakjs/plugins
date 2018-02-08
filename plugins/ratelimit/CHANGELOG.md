@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/bakjs/plugins/compare/@bakjs/ratelimit@2.0.1...@bakjs/ratelimit@2.1.0) (2018-02-08)
+
+
+### Features
+
+* export explicit configKey ([add9dfb](https://github.com/bakjs/plugins/commit/add9dfb))
+
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/bakjs/plugins/compare/@bakjs/ratelimit@0.1.5...@bakjs/ratelimit@2.0.1) (2017-10-24)
 
