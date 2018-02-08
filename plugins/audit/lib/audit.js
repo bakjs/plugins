@@ -16,17 +16,20 @@ class Audit extends Model {
       // Request IP
       ip: { type: String },
 
-      // Target ObjectId
-      target: { type: Schema.Types.ObjectId, index: true },
+      // Resource
+      resource: { type: Schema.Types.ObjectId, refPath: 'kind', index: true },
 
-      // Target Model
-      target_model: { type: String, index: true },
+      // Resource kind
+      kind: { type: String, index: true },
 
       // Action const
       action: { type: String, index: true },
 
       // Log Entry Create Time
-      created_at: { type: Date, default: Date.now }
+      created_at: { type: Date, default: Date.now },
+
+      // Tags
+      tags: [ String ]
     }
   }
 }
