@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/bakjs/plugins/compare/@bakjs/audit@2.2.0...@bakjs/audit@3.0.0) (2018-02-08)
+
+
+### Features
+
+* **audit:** depricate good-audit and make DB storage working ([1f3f569](https://github.com/bakjs/plugins/commit/1f3f569))
+
+
+### BREAKING CHANGES
+
+* **audit:** usage changes
+
+
+
+
 <a name="2.2.0"></a>
 # [2.2.0](https://github.com/bakjs/plugins/compare/@bakjs/audit@2.1.1...@bakjs/audit@2.2.0) (2018-02-08)
 
