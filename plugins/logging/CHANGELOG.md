@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="2.4.0"></a>
+# [2.4.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.3.0...@bakjs/logging@2.4.0) (2018-02-08)
+
+
+### Features
+
+* **logging:** rewrite with better output for dev and prod ([77dfea3](https://github.com/bakjs/plugins/commit/77dfea3))
+
+
+
+
 <a name="2.3.0"></a>
 # [2.3.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.2.4...@bakjs/logging@2.3.0) (2018-01-28)
 
