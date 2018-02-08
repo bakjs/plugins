@@ -1,33 +1,21 @@
-const Chalk = require('chalk')
-const Errors = require('./errors')
+const { parseRequest, commonFormat, formatJOSN, formatError } = require('./utils')
 
 exports.register = function (server, options) {
   const isDev = process.env.NODE_ENV !== 'production'
 
   server.events.on(
-    { name: 'request', channels: 'internal' },
-    (request, { timestamp, error }, tags) => {
-      if (!error) {
-        return
+    { name: 'request', channels: 'error' }, (request, { error, timestamp }, tags) => {
+      // Parse request
+      const reqInfo = parseRequest(request, timestamp)
+
+      if (isDev) {
+        // Show full traces in dev mode
+        console.error('\n' + formatJOSN(reqInfo))
+        console.error('\n' + formatError(error) + '\n')
+      } else {
+        // Log with common log format
+        console.log(commonFormat(reqInfo))
       }
-
-      if (error.isBoom) {
-        let { name, message, statusCode } = error
-
-        if (error.output) {
-          message = message || error.output.payload.message
-          statusCode = error.output.payload.statusCode
-        }
-
-        console.error(
-          '\n' + Chalk.red(`[${name}] [${statusCode}]`),
-          Chalk.red(request.path),
-          Chalk.grey(`\n${message}`)
-        )
-        return
-      }
-
-      Errors.error(error)
     }
   )
 }
@@ -35,5 +23,3 @@ exports.register = function (server, options) {
 exports.once = true
 
 exports.pkg = require('../package.json')
-
-exports.error = Errors.error

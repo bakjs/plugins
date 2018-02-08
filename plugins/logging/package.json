@@ -11,8 +11,5 @@
   ],
   "files": [
     "lib"
-  ],
-  "dependencies": {
-    "pretty-error": "^2.1.1"
-  }
+  ]
 }
