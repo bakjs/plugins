@@ -67,10 +67,6 @@ exports.register = function HapiRateLimit (plugin, _options) {
   plugin.ext('onPostHandler', responseLimits)
 }
 
-exports.pkg = require('../package.json')
-
-exports.once = true
-
 // Set rate-limit headers
 function setHeaders (headers, ratelimit, XHeaders = false) {
   if (XHeaders) {
@@ -97,3 +93,7 @@ const defaults = {
 function realIP (request) {
   return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
 }
+
+exports.pkg = require('../package.json')
+exports.once = true
+exports.configKey = 'ratelimit'

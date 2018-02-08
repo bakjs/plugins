@@ -26,7 +26,7 @@ exports.register = async (server, authOptions) => {
 }
 
 exports.pkg = require('../package.json')
-
 exports.once = true
+exports.configKey = 'auth'
 
 exports.User = User

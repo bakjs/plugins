@@ -40,5 +40,5 @@ exports.register = (server, options) => {
 }
 
 exports.pkg = require('../package.json')
-
 exports.once = true
+exports.configKey = 'nunjucks'

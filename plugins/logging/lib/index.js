@@ -20,6 +20,6 @@ exports.register = function (server, options) {
   )
 }
 
-exports.once = true
-
 exports.pkg = require('../package.json')
+exports.once = true
+exports.configKey = 'logging'

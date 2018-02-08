@@ -26,8 +26,9 @@ exports.register = function (server, config) {
   })
 }
 
-exports.name = '@bakjs/audit'
 exports.pkg = require('../package.json')
+exports.once = true
+exports.configKey = 'audit'
 
 exports.GoodAudit = GoodAudit
 exports.Audit = Audit

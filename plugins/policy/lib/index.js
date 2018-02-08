@@ -10,5 +10,5 @@ exports.register = function (server, options) {
 }
 
 exports.pkg = require('../package.json')
-
 exports.once = true
+exports.configKey = 'policy'

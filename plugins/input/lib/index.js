@@ -53,5 +53,5 @@ exports.register = function bakInput (server, config) {
 }
 
 exports.pkg = require('../package.json')
-
 exports.once = true
+exports.configKey = 'input'

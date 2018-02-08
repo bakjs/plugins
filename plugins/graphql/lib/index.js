@@ -78,8 +78,8 @@ exports.register = (server, options, next) => {
 }
 
 exports.pkg = require('../package.json')
-
 exports.once = true
+exports.configKey = 'graphql'
 
 function realIP (request) {
   return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
