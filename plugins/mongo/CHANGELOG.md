@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/bakjs/plugins/compare/@bakjs/mongo@3.1.0...@bakjs/mongo@4.0.0) (2018-04-12)
+
+
+### misc
+
+* update to cachegoose 6.0.1 ([26dab17](https://github.com/bakjs/plugins/commit/26dab17))
+
+
+### BREAKING CHANGES
+
+* https://github.com/boblauer/cachegoose
+
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/bakjs/plugins/compare/@bakjs/mongo@3.0.2...@bakjs/mongo@3.1.0) (2018-02-08)
 

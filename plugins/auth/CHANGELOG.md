@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.1.0...@bakjs/auth@3.1.1) (2018-04-12)
+
+
+
+
+**Note:** Version bump only for package @bakjs/auth
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.0.4...@bakjs/auth@3.1.0) (2018-02-08)
 
