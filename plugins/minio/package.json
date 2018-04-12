@@ -14,6 +14,6 @@
   ],
   "dependencies": {
     "config": "^1.29.2",
-    "minio": "^4.0.0"
+    "minio": "^5.0.0"
   }
 }
