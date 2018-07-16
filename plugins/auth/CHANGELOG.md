@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.1.1...@bakjs/auth@3.2.0) (2018-07-16)
+
+
+### Features
+
+* **auth:** allow customizing oauth2 routes ([ff6f89f](https://github.com/bakjs/plugins/commit/ff6f89f))
+
+
+
+
 <a name="3.1.1"></a>
 ## [3.1.1](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.1.0...@bakjs/auth@3.1.1) (2018-04-12)
 
