@@ -5,7 +5,7 @@ const AuthBaseProvider = require('./base')
 const { jwt_verify, jwt_decode, hash_verify, jwt_sign, uid } = require('./utils')
 
 class AuthDefaultProvider extends AuthBaseProvider {
-  constructor (options = {}) {
+  constructor(options = {}) {
     super(options)
 
     // User Model
@@ -17,7 +17,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
   // ==============================
   // Authentication methods
   // ==============================
-  async authToken (token) {
+  async authToken(token) {
     let token_decoded = jwt_decode(token)
     if (!token_decoded) throw new Error('INVALID_TOKEN')
 
@@ -54,14 +54,14 @@ class AuthDefaultProvider extends AuthBaseProvider {
     }
   }
 
-  validateToken (token) {
+  validateToken(token) {
     return jwt_verify(token, this.options.secret)
   }
 
   // ==============================
   // Create Token & Session
   // ==============================
-  async getToken (user, request = { headers: [], info: [] }, client) {
+  async getToken(user, request = { headers: [], info: [] }, client) {
     // Create new session
     let session = user.sessions.create({
       agent: request.headers['user-agent'],
@@ -96,7 +96,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
   // ==============================
   // Methods to work with user
   // ==============================
-  findByUsername (username) {
+  findByUsername(username) {
     let username_fields = this.options.username_fields || ['username', 'email']
 
     return this.options.user_model.findOne({
@@ -108,7 +108,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
     })
   }
 
-  validateUser (user) {
+  validateUser(user) {
     // Check user is not null!
     if (!user) {
       throw Boom.unauthorized('USER_NOT_FOUND')
@@ -120,7 +120,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
     }
   }
 
-  async validatePassword (user, password) {
+  async validatePassword(user, password) {
     // Check password
     let verified = await hash_verify(password, user.get('password'))
     if (verified !== true) {
@@ -131,11 +131,11 @@ class AuthDefaultProvider extends AuthBaseProvider {
   // ==============================
   // Login/Logout
   // ==============================
-  get loginSupported () {
+  get loginSupported() {
     return true
   }
 
-  async login ({ username, password, request }) {
+  async login({ username, password, request }) {
     // Find user
     let user = await this.findByUsername(username)
 
@@ -156,7 +156,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
     return { token, user }
   }
 
-  async logout ({ user, session, request }) {
+  async logout({ user, session, request }) {
     if (session) user.sessions.remove(session)
     else user.sessions = []
 
@@ -169,11 +169,11 @@ class AuthDefaultProvider extends AuthBaseProvider {
   // ==============================
   // Oauth Client
   // ==============================
-  get oauthSupported () {
+  get oauthSupported() {
     return this.options.oauth
   }
 
-  async oauthLogin (client_id) {
+  async oauthLogin(client_id) {
     // Find client
     let client = this.options.oauth[client_id]
     if (!client) {
@@ -192,13 +192,13 @@ class AuthDefaultProvider extends AuthBaseProvider {
 
     // Generate url
     return `${client.url}/${client.authorize || 'authorize'}?` +
-            `state=${encodeURIComponent(state)}` +
-            `&client_id=${encodeURIComponent(client.client_id)}` +
-            `&scope=${encodeURIComponent(scope)}` +
-            `&redirect_uri=${encodeURIComponent(client.redirect_uri)}`
+      `state=${encodeURIComponent(state)}` +
+      `&client_id=${encodeURIComponent(client.client_id)}` +
+      `&scope=${encodeURIComponent(scope)}` +
+      `&redirect_uri=${encodeURIComponent(client.redirect_uri)}`
   }
 
-  async oauthAuthorize (client_id, request) {
+  async oauthAuthorize(client_id, request) {
     // Request params
     let { code, state } = request.payload || request.query
 
@@ -237,9 +237,14 @@ class AuthDefaultProvider extends AuthBaseProvider {
     let user
 
     try {
-      user = (await Axios.get(`${client.url_internal || client.url}/${client.user || 'user'}?token=${access_token}`)).data.user
+      const { data } = await Axios.get(`${client.url_internal || client.url}/${client.user || 'user'}`, {
+        headers: {
+          Authorization: `Bearer ${access_token}`
+        }
+      })
+      user = data.user || data
     } catch (e) {
-
+      throw Boom.unauthorized('OAUTH_USER')
     }
 
     if (!user || !user.email) {
@@ -275,6 +280,6 @@ class AuthDefaultProvider extends AuthBaseProvider {
 
 module.exports = AuthDefaultProvider
 
-function realIP (request) {
+function realIP(request) {
   return request.ip || request.headers['x-real-ip'] || request.headers['x-forwarded-for'] || request.info['remoteAddress']
 }
