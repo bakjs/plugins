@@ -214,8 +214,10 @@ class AuthDefaultProvider extends AuthBaseProvider {
     let data = {
       code: code,
       state: state,
+      grant_type: client.grant_type || 'authorization_code',
       client_id: client.client_id,
-      client_secret: client.client_secret
+      client_secret: client.client_secret,
+      redirect_uri: client.redirect_uri,
     }
 
     let access_token
