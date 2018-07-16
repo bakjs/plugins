@@ -191,7 +191,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
     let state = await uid(6)
 
     // Generate url
-    return `${client.url}/authorize?` +
+    return `${client.url}/${client.authorize || 'authorize'}?` +
             `state=${encodeURIComponent(state)}` +
             `&client_id=${encodeURIComponent(client.client_id)}` +
             `&scope=${encodeURIComponent(scope)}` +
@@ -209,7 +209,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
     }
 
     // Request for access_token
-    let url = `${client.url_internal || client.url}/access_token`
+    let url = `${client.url_internal || client.url}/${client.token || 'access_token'}`
 
     let data = {
       code: code,
@@ -235,7 +235,7 @@ class AuthDefaultProvider extends AuthBaseProvider {
     let user
 
     try {
-      user = (await Axios.get(`${client.url_internal || client.url}/user?token=${access_token}`)).data.user
+      user = (await Axios.get(`${client.url_internal || client.url}/${client.user || 'user'}?token=${access_token}`)).data.user
     } catch (e) {
 
     }
