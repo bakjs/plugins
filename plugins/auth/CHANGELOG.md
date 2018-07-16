@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.2.0...@bakjs/auth@3.3.0) (2018-07-16)
+
+
+### Features
+
+* **auth:** send grant_type and redirect_uri to oauth2 token endpoint ([38f6363](https://github.com/bakjs/plugins/commit/38f6363))
+
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.1.1...@bakjs/auth@3.2.0) (2018-07-16)
 
