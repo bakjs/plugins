@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.6.0"></a>
+# [3.6.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.5.0...@bakjs/auth@3.6.0) (2018-08-22)
+
+
+### Features
+
+* **auth/controller:** swagger compatibility ([4d18a28](https://github.com/bakjs/plugins/commit/4d18a28))
+
+
+
+
 <a name="3.5.0"></a>
 # [3.5.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.4.0...@bakjs/auth@3.5.0) (2018-07-17)
 
