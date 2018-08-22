@@ -1,4 +1,5 @@
 const { Controller } = require('bak')
+const Joi = require('joi')
 
 class $AuthController extends Controller {
   constructor (authProvider) {
@@ -9,17 +10,37 @@ class $AuthController extends Controller {
   init () {
     this.prefix = '/api'
     this.defaults.auth = false
+    this.defaults.tags = ['api', 'Authentication']
 
-    this.get('/auth/user', this.user, {auth: {mode: 'required'}})
+    this.get('/auth/user', this.user, {
+      description: 'Get the currently authenticated user',
+      auth: {
+        mode: 'required'
+      }
+    })
 
     if (this.authProvider.loginSupported) {
-      this.post('/auth/login', this.login)
-      this.any('/auth/logout', this.logout, {auth: {mode: 'required'}})
+      this.post('/auth/login', this.login, {
+        description: 'Login user with the provided credentials',
+        validate: {
+          payload: {
+            username: Joi.string().description('Username or Email').example('test@example.com'),
+            password: Joi.string().description('Password').example('123456')
+          }
+        }
+      })
+
+      this.post('/auth/logout', this.logout, {
+        description: 'Logout the currently authenticated user',
+        auth: {
+          mode: 'required'
+        }
+      })
     }
 
     if (this.authProvider.oauthSupported) {
-      this.any('/oauth/{clientID}/login', this.oauthLogin)
-      this.any('/oauth/{clientID}/authorize', this.oauthAuthorize)
+      this.get('/oauth/{clientID}/login', this.oauthLogin)
+      this.post('/oauth/{clientID}/authorize', this.oauthAuthorize)
     }
   }
 
