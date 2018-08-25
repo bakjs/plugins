@@ -2,9 +2,10 @@ const { Controller } = require('bak')
 const Joi = require('joi')
 
 class $AuthController extends Controller {
-  constructor (authProvider) {
+  constructor (authProvider, authOptions) {
     super()
     this.authProvider = authProvider
+    this.authOptions = authOptions
   }
 
   init () {
@@ -47,7 +48,16 @@ class $AuthController extends Controller {
   async login (request, h) {
     let { username, password } = request.payload || {}
     let { token } = await this.authProvider.login({ username, password, request })
-    return { token }
+
+    if (this.authOptions.state) {
+      h.state(this.authOptions.accessTokenName || 'token', token, Object.assign({ 
+        isSecure:false,
+        ttl: null,
+        path:'/' 
+      }, this.authOptions.state));  
+    }
+
+    return h.response({ token });
   }
 
   async logout (request, h) {
