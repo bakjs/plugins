@@ -48,7 +48,15 @@ class $AuthController extends Controller {
   async login (request, h) {
     let { username, password } = request.payload || {}
     let { token } = await this.authProvider.login({ username, password, request })
-    h.state(this.authOptions.accessTokenName || 'token', token, {isSecure:false, ttl: null, path:'/'});
+
+    if (this.authOptions.state) {
+      h.state(this.authOptions.accessTokenName || 'token', token, Object.assign({ 
+        isSecure:false,
+        ttl: null,
+        path:'/' 
+      }, this.authOptions.state));  
+    }
+
     return h.response({ token });
   }
 
