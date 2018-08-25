@@ -20,7 +20,7 @@ exports.register = async (server, authOptions) => {
   server.auth.default('default')
 
   // Register Auth Controller
-  const authController = new AuthController(authProvider)
+  const authController = new AuthController(authProvider, authOptions)
   await authController.init()
   server.route(await authController.routes())
 }
