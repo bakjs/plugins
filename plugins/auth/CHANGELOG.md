@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="3.7.0"></a>
+# [3.7.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.6.0...@bakjs/auth@3.7.0) (2018-08-26)
+
+
+### Bug Fixes
+
+* **auth, AuthController:** pass authOptions to the constructor as second parameter ([#3](https://github.com/bakjs/plugins/issues/3)) ([888b231](https://github.com/bakjs/plugins/commit/888b231))
+
+
+### Features
+
+* **auth:** ability to store token in cookie ([#2](https://github.com/bakjs/plugins/issues/2)) ([5318989](https://github.com/bakjs/plugins/commit/5318989))
+
+
+
+
 <a name="3.6.0"></a>
 # [3.6.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.5.0...@bakjs/auth@3.6.0) (2018-08-22)
 
