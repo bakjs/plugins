@@ -4,7 +4,7 @@ exports.register = function (server, options) {
   const isDev = process.env.NODE_ENV !== 'production'
 
   server.events.on(
-    { name: 'request', channels: 'error' }, (request, { error, timestamp }, tags) => {
+    { name: 'request', channels: ['error', 'internal'] }, (request, { error, timestamp }, tags) => {
       // Parse request
       const reqInfo = parseRequest(request, timestamp)
 
