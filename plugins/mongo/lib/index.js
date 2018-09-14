@@ -19,11 +19,12 @@ exports.register = function (server, config = {}) {
     cachegoose(Mongoose, config.cache)
   }
 
-  let queue = Object.keys(config.connections).map(connection_name => {
+  const queue = Object.keys(config.connections).map(connection_name => {
     const connection = config.connections[connection_name]
 
     const clientOptions = {
-      promiseLibrary: global.Promise
+      promiseLibrary: global.Promise,
+      useNewUrlParser: true
     }
 
     if (connection_name === 'default') {
