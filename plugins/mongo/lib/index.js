@@ -1,22 +1,25 @@
 const Mongoose = require('mongoose')
 const Model = require('./model')
 
-// Use native promises
-Mongoose.Promise = global.Promise
-
-// @see https://github.com/whitecolor/mongoose-fill
-require('mongoose-fill')
-
-// @see https://github.com/boblauer/cachegoose
-const cachegoose = require('cachegoose')
-
 exports.register = function (server, config = {}) {
+  const _Mongoose = config.Mongoose || Mongoose
+
+  // Use native promises
+  _Mongoose.Promise = global.Promise
+
   // Use custom function to log collection methods + arguments
-  Mongoose.set('debug', config.debug)
+  _Mongoose.set('debug', config.debug)
 
   // Register cachegoose
+  // @see https://github.com/boblauer/cachegoose
   if (config.cache !== false) {
-    cachegoose(Mongoose, config.cache)
+    const cachegoose = require('cachegoose')
+    cachegoose(_Mongoose, config.cache)
+  }
+
+  // @see https://github.com/whitecolor/mongoose-fill
+  if (config.fill !== false) {
+    require('mongoose-fill')
   }
 
   const queue = Object.keys(config.connections).map(connection_name => {
@@ -28,9 +31,9 @@ exports.register = function (server, config = {}) {
     }
 
     if (connection_name === 'default') {
-      return Mongoose.connect(connection.uri, clientOptions)
+      return _Mongoose.connect(connection.uri, clientOptions)
     }
-    return Mongoose.createConnection(connection.uri, clientOptions)
+    return _Mongoose.createConnection(connection.uri, clientOptions)
   })
 
   return Promise.all(queue)
@@ -42,3 +45,4 @@ exports.configKey = 'mongo'
 
 exports.Model = Model
 exports.Schema = Mongoose.Schema
+exports.Mongoose = Mongoose
