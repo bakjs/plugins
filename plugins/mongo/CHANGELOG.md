@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="4.1.0"></a>
+# [4.1.0](https://github.com/bakjs/plugins/compare/@bakjs/mongo@4.0.0...@bakjs/mongo@4.1.0) (2018-09-14)
+
+
+### Bug Fixes
+
+* **mongo:** use useNewUrlParser ([2046cb9](https://github.com/bakjs/plugins/commit/2046cb9))
+
+
+### Features
+
+* **mongo:** support custom version of Mongoose ([ff47769](https://github.com/bakjs/plugins/commit/ff47769))
+
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/bakjs/plugins/compare/@bakjs/mongo@3.1.0...@bakjs/mongo@4.0.0) (2018-04-12)
 
