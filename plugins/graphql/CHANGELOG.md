@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/bakjs/plugins/compare/@bakjs/graphql@2.1.0...@bakjs/graphql@2.2.0) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#5](https://github.com/bakjs/plugins/issues/5)) ([fbfa4ad](https://github.com/bakjs/plugins/commit/fbfa4ad))
+
+
+### Features
+
+* update major dependencies ([0d75f39](https://github.com/bakjs/plugins/commit/0d75f39))
+
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/bakjs/plugins/compare/@bakjs/graphql@2.0.5...@bakjs/graphql@2.1.0) (2018-02-08)
 

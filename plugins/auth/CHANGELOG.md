@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.8.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.7.0...@bakjs/auth@3.8.0) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#5](https://github.com/bakjs/plugins/issues/5)) ([fbfa4ad](https://github.com/bakjs/plugins/commit/fbfa4ad))
+
+
+### Features
+
+* update major dependencies ([0d75f39](https://github.com/bakjs/plugins/commit/0d75f39))
+
+
+
+
+
 <a name="3.7.0"></a>
 # [3.7.0](https://github.com/bakjs/plugins/compare/@bakjs/auth@3.6.0...@bakjs/auth@3.7.0) (2018-08-26)
 

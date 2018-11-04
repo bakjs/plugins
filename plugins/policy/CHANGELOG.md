@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/bakjs/plugins/compare/@bakjs/policy@2.1.0...@bakjs/policy@2.1.1) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#5](https://github.com/bakjs/plugins/issues/5)) ([fbfa4ad](https://github.com/bakjs/plugins/commit/fbfa4ad))
+
+
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/bakjs/plugins/compare/@bakjs/policy@2.0.2...@bakjs/policy@2.1.0) (2018-02-08)
 

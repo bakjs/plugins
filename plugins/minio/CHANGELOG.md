@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/bakjs/plugins/compare/@bakjs/minio@4.0.0...@bakjs/minio@4.1.0) (2018-11-04)
+
+
+### Bug Fixes
+
+* **deps:** update all non-major dependencies ([#5](https://github.com/bakjs/plugins/issues/5)) ([fbfa4ad](https://github.com/bakjs/plugins/commit/fbfa4ad))
+
+
+### Features
+
+* update major dependencies ([0d75f39](https://github.com/bakjs/plugins/commit/0d75f39))
+
+
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/bakjs/plugins/compare/@bakjs/minio@3.0.0...@bakjs/minio@4.0.0) (2018-04-12)
 
