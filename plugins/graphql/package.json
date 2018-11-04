@@ -13,7 +13,7 @@
     "lib"
   ],
   "dependencies": {
-    "graphql-server-hapi": "^1.3.2",
-    "graphql-tools": "^2.19.0"
+    "graphql-server-hapi": "^1.4.0",
+    "graphql-tools": "^2.24.0"
   }
 }

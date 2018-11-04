@@ -13,6 +13,6 @@
     "lib"
   ],
   "dependencies": {
-    "boom": "^7.1.1"
+    "boom": "^7.2.2"
   }
 }
