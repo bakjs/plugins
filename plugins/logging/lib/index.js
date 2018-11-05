@@ -6,6 +6,10 @@ exports.register = function (server, options) {
 
   server.events.on(
     { name: 'request', channels: ['error', 'internal'] }, (request, { error, timestamp }, tags) => {
+      if (!error) {
+       return
+      }
+
       // Parse request
       const reqInfo = parseRequest(request, timestamp)
 
