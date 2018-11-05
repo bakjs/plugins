@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.5.1...@bakjs/logging@2.6.0) (2018-11-05)
+
+
+### Features
+
+* use consola ([34b8dd0](https://github.com/bakjs/plugins/commit/34b8dd0))
+
+
+
+
+
 <a name="2.5.1"></a>
 ## [2.5.1](https://github.com/bakjs/plugins/compare/@bakjs/logging@2.5.0...@bakjs/logging@2.5.1) (2018-09-05)
 
