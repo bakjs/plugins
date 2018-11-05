@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/bakjs/plugins/compare/@bakjs/minio@4.1.0...@bakjs/minio@4.1.1) (2018-11-05)
+
+
+### Bug Fixes
+
+* secure ~> useSSL ([02d4d07](https://github.com/bakjs/plugins/commit/02d4d07))
+
+
+
+
+
 # [4.1.0](https://github.com/bakjs/plugins/compare/@bakjs/minio@4.0.0...@bakjs/minio@4.1.0) (2018-11-04)
 
 
