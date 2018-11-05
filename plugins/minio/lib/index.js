@@ -5,14 +5,14 @@ const Minio = require('minio')
 const default_config = {
   endPoint: 'localhost',
   port: 9000,
-  secure: false,
+  useSSL: false,
   accessKey: '',
   secretKey: ''
 }
 
 const config = Object.assign({}, default_config, Config.has('minio') ? Config.get('minio') : null)
 config.port = parseInt(config.port)
-config.secure = Boolean(config.secure)
+config.useSSL = Boolean(config.useSSL)
 
 const client = new Minio.Client(config)
 module.exports = client
