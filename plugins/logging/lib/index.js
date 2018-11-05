@@ -1,4 +1,5 @@
-const { parseRequest, commonFormat, formatJOSN, formatError } = require('./utils')
+const { parseRequest, commonFormat } = require('./utils')
+const consola = require('consola')
 
 exports.register = function (server, options) {
   const isDev = process.env.NODE_ENV !== 'production'
@@ -9,12 +10,11 @@ exports.register = function (server, options) {
       const reqInfo = parseRequest(request, timestamp)
 
       if (isDev) {
-        // Show full traces in dev mode
-        console.error('\n' + formatJOSN(reqInfo))
-        console.error('\n' + formatError(error) + '\n')
+        consola.error(error)
+        consola.info(reqInfo)
       } else {
         // Log with common log format
-        console.log(commonFormat(reqInfo))
+        consola.log(commonFormat(reqInfo))
       }
     }
   )

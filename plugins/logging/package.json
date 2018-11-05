@@ -11,5 +11,8 @@
   ],
   "files": [
     "lib"
-  ]
+  ],
+  "dependencies": {
+    "consola": "^2.2.2"
+  }
 }

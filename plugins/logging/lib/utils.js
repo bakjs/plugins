@@ -1,6 +1,3 @@
-const Chalk = require('chalk')
-const { startCase } = require('lodash')
-
 function parseRequest (request, timestamp) {
   let date = new Date(timestamp)
   let host = realIP(request)
@@ -36,40 +33,8 @@ function commonFormat (reqInfo) {
   ].map(p => p || '-').join(' ')
 }
 
-function formatJOSN (obj) {
-  return Object.keys(obj)
-    .filter(k => obj[k])
-    .map(k => Chalk.grey(startCase(k) + ': ') + obj[k])
-    .join('\n')
-}
-
-function formatError (error) {
-  const cwd = process.cwd()
-
-  const lines = error.stack.split('\n').splice(1).map(line => {
-    // Strip cwd()
-    line = line.replace(cwd + '/', '')
-
-    // Internals
-    if (line.includes('<anonymous>') || line.includes('internal/')) {
-      return Chalk.grey(line)
-    }
-
-    // Node Modules
-    if (line.includes('node_modules/')) {
-      return Chalk.grey(line)
-    }
-
-    return line
-  })
-
-  return Chalk.red(error) + '\n' + lines.join('\n')
-}
-
 module.exports = {
   realIP,
-  formatJOSN,
   commonFormat,
-  parseRequest,
-  formatError
+  parseRequest
 }
