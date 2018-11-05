@@ -12,7 +12,7 @@ const default_config = {
 
 const config = Object.assign({}, default_config, Config.has('minio') ? Config.get('minio') : null)
 config.port = parseInt(config.port)
-config.useSSL = Boolean(config.useSSL)
+config.useSSL = Boolean(config.useSSL) || Boolean(config.secure)
 
 const client = new Minio.Client(config)
 module.exports = client
