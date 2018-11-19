@@ -18,6 +18,8 @@
 </a>
 </p>
 
+# This repository is archived! Please see https://github.com/bakjs/bak
+
 ✓ This plugins are compatible with any Hapi 17.x+ server too
 
 <!-- Core plugins -->
